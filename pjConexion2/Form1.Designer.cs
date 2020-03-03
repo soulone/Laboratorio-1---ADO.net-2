@@ -28,17 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dgClientes = new System.Windows.Forms.DataGridView();
             this.lblTotal = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.neptunoDataSet1 = new pjConexion2.neptunoDataSet1();
+            this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clientesTableAdapter = new pjConexion2.neptunoDataSet1TableAdapters.clientesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.neptunoDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgClientes
             // 
+            this.dgClientes.AllowUserToAddRows = false;
+            this.dgClientes.AllowUserToDeleteRows = false;
             this.dgClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgClientes.Location = new System.Drawing.Point(12, 202);
             this.dgClientes.Name = "dgClientes";
+            this.dgClientes.ReadOnly = true;
             this.dgClientes.Size = new System.Drawing.Size(776, 150);
             this.dgClientes.TabIndex = 0;
             // 
@@ -62,6 +71,20 @@
             this.label1.Text = "Listado de Clientes";
             this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
+            // neptunoDataSet1
+            // 
+            this.neptunoDataSet1.DataSetName = "neptunoDataSet1";
+            this.neptunoDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // clientesBindingSource
+            // 
+            this.clientesBindingSource.DataMember = "clientes";
+            this.clientesBindingSource.DataSource = this.neptunoDataSet1;
+            // 
+            // clientesTableAdapter
+            // 
+            this.clientesTableAdapter.ClearBeforeFill = true;
+            // 
             // frmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -74,6 +97,8 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.frmClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.neptunoDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -84,6 +109,9 @@
         private System.Windows.Forms.DataGridView dgClientes;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label label1;
+        private neptunoDataSet1 neptunoDataSet1;
+        private System.Windows.Forms.BindingSource clientesBindingSource;
+        private neptunoDataSet1TableAdapters.clientesTableAdapter clientesTableAdapter;
     }
 }
 
